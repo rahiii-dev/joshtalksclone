@@ -1,0 +1,144 @@
+
+@font-face {
+    font-family: "monteserrat";
+    src: url('../fonts/montserrat.woff2');
+}
+
+@font-face {
+    font-family: "inter";
+    src: url("../fonts/inter.woff2");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-bg: hsl(0, 0%, 100%);
+
+    --accent-orange: hsl(39, 100%, 50%);
+    --accent-blue: hsl(204, 70%, 46%);
+
+    --text-priimary: hsl(0, 0%, 6%);
+
+    /* --font-primary: 'monteserrat'; */
+    --font-primary: Arial, Helvetica, sans-serif;
+    --font-secondary: 'inter', sans-serif;
+}
+
+
+/* globals */
+body {
+    --header-height: 74px;
+    background-color: var(--primary-bg);
+    color: var(--text-priimary);
+    font-family: var(--font-primary);
+}
+
+.container {
+    --cn-width: 1110px;
+    width: min(100%, var(--cn-width));
+    padding-inline: 15px;
+    margin-inline: auto;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-inline: 50px;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        --cn-width: 930px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    body {
+        --header-height: 66.25px;
+    }
+
+    .container {
+        --cn-width: 690px;
+    }
+
+    .container-fluid {
+        padding-inline: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        --cn-width: 510px;
+    }
+}
+
+a.default {
+    text-decoration: none;
+    color: var(--text-priimary);
+}
+
+ul.default {
+    list-style: none;
+}
+
+
+/* header */
+header {
+    height: var(--header-height);
+}
+
+header .container-fluid {
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container-fluid nav ul {
+    display: flex;
+}
+
+header .container-fluid nav ul li {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-wrap: nowrap;
+    font-size: 14px;
+    letter-spacing: 1.4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-inline: 16px;
+}
+
+header .container-fluid nav ul li a {
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 300ms ease-in-out;
+}
+
+header .container-fluid nav ul li a::after {
+    content: '';
+    width: 0px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--accent-orange);
+    transition: all 400ms ease-in-out;
+}
+
+header .container-fluid nav ul li a:hover {
+    color: var(--accent-orange);
+}
+header .container-fluid nav ul li a:hover::after {
+    width: 100%;
+}
+
+#mobile-toggler {
+    display: none;
+}
