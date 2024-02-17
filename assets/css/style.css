@@ -17,11 +17,12 @@
 
 :root {
     --primary-bg: hsl(0, 0%, 100%);
-
-    --accent-orange: hsl(39, 100%, 50%);
+    --accent-orange: hsl(23, 90%, 56%);
     --accent-blue: hsl(204, 70%, 46%);
+    --bright-blue: hsl(211, 100%, 50%);
 
     --text-priimary: hsl(0, 0%, 6%);
+    --text-secondary: rgb(255, 255, 255);
 
     /* --font-primary: 'monteserrat'; */
     --font-primary: Arial, Helvetica, sans-serif;
@@ -97,6 +98,11 @@ header .container-fluid {
     align-items: center;
 }
 
+header .container-fluid .logo img {
+    width: 90px;
+    height: auto;
+}
+
 header .container-fluid nav ul {
     display: flex;
 }
@@ -141,4 +147,423 @@ header .container-fluid nav ul li a:hover::after {
 
 #mobile-toggler {
     display: none;
+}
+
+/* hero */
+#hero {
+    position: relative;
+    min-height: calc(100vh - var(--header-height));
+    padding-block: 150px;
+    overflow: hidden;
+}
+
+#hero::before,
+#hero::after {
+    --size: 300px;
+    content: '';
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+#hero::before {
+    --size: 320px;
+    right: -100px;
+    bottom: -60px;
+    background-color: var(--accent-orange);
+}
+
+#hero::after {
+    --size: 620px;
+    left: -300px;
+    bottom: -60px;
+    background-color: var(--accent-blue);
+}
+
+#hero .content {
+    width: 70%;
+    text-align: center;
+    margin-inline: auto;
+}
+
+#hero .content h1 {
+    font-size: 104px;
+    font-weight: 400;
+    line-height: 101px;
+}
+
+#hero .content h1 .circle {
+    display: inline-block;
+    position: relative;
+    padding-top: 50px;
+    padding-left: 100px;
+    margin-left: 100px 0px;
+}
+
+#hero .content h1 .circle span {
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#hero .content h1 .circle .circle-1 {
+    top: 0;
+    right: 0;
+    background-color: var(--accent-orange);
+}
+#hero .content h1 .circle .circle-2 {
+    top: 65%;
+    right: 20%;
+    background-color: var(--accent-blue);
+}
+
+#hero .content h1 .changing-content {
+    color: var(--accent-orange);
+    font-size: 226px;
+    line-height: 1.5;
+}
+
+#hero .content p {
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+@media screen and (max-width: 1500px) {
+    #hero {
+        padding-block: 100px;
+    }
+
+    #hero::before {
+        --size: 300px;
+        right: -120px;
+    }
+    #hero::after {
+        --size: 570px;
+        left: -310px;
+    }
+
+    #hero .content h1 {
+        font-size: 94px;
+        line-height: 96px;
+    }
+
+    #hero .content h1 .changing-content {
+        font-size: 200px;
+    }
+
+    #hero .content p {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    #hero {
+        padding-block: 80px;
+    }
+    #hero .content h1 {
+        font-size: 76px;
+        line-height: 80px;
+    }
+    #hero .content h1 .changing-content {
+        font-size: 160px;
+    }
+}
+@media screen and (max-width: 1300px) {
+    #hero {
+        padding-top: 40px;
+    }
+    #hero .content {
+        width: 65%;
+    }
+    #hero .content h1 {
+        font-size: 70px;
+        line-height: 74px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #hero::before {
+        --size: 280px;
+        right: -110px;
+    }
+    #hero::after {
+        --size: 500px;
+        left: -270px;
+    }
+
+    #hero .content {
+        width: 60%;
+    }
+
+    #hero .content h1 {
+        font-size: 84px;
+        line-height: 90px;
+    }
+
+    #hero .content h1 .changing-content {
+        font-size: 170px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    #hero::before {
+        --size: 260px;
+        right: -80px;
+    }
+    #hero::after {
+        --size: 450px;
+        left: -240px;
+    }
+    #hero .content {
+        width: 70%;
+    }
+    #hero .content h1 {
+        font-size: 74px;
+        line-height: 80px;
+    }
+    #hero .content h1 .changing-content {
+        font-size: 140px;
+    }
+    #hero .content p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #hero {
+        min-height: 600px;
+        padding-block: 0px 70px;
+    }
+
+    #hero::before {
+        --size: 220px;
+    }
+    #hero::after {
+        --size: 420px;
+    }
+    #hero .content {
+        width: 80%;
+    }
+    #hero .content h1 {
+        font-size: 58px;
+        line-height: 72px;
+    }
+    #hero .content h1 .changing-content {
+        font-size: 110px;
+    }
+}
+
+@media screen and (max-width: 766px) {
+    #hero {
+        padding-block: 50px;
+    }
+    #hero .content {
+        width: 90%;
+    }
+    #hero .content h1 {
+        font-size: 48px;
+        line-height: 58px;
+    }
+    #hero .content h1 .changing-content {
+        font-size: 90px;
+    }
+    #hero .content p {
+        font-size: 16px;
+    }
+}
+
+#hero .banner-image {
+    --size: 100px;
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+}
+
+#hero .banner-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+#hero .banner-image.image1 {
+    --bounce-x: -25px;
+    --size: 140px;
+    top: 110px;
+    right: 140px;
+    animation-name: bounce-X;
+    animation-duration: 7s; 
+}
+
+#hero .banner-image.image2 {
+    --bounce-y: 30px;
+    --size: 120px;
+    top: 180px;
+    right: 210px;
+    animation-name: bounce-Y;
+    animation-duration: 8s; 
+}
+
+#hero .banner-image.image3 {
+    --bounce-x: -40px;
+    --size: 240px;
+    right: 100px;
+    bottom: 80px;
+    animation-name: bounce-X;
+    animation-duration: 7s;
+}
+
+#hero .banner-image.image4 {
+    --bounce-x: -25px;
+    --size: 220px;
+    left: 150px;
+    bottom: 240px;
+    animation-name: bounce-X;
+    animation-duration: 7s; 
+}
+
+#hero .banner-image.image5 {
+    --bounce-y: 30px;
+    --size: 160px;
+    left: 240px;
+    bottom: 150px;
+    animation-name: bounce-Y;
+    animation-duration: 8s; 
+}
+
+#hero .banner-image.image5 img {
+    object-position: center -30px;
+}
+
+@media screen and (max-width: 1500px) {
+    #hero .banner-image.image1 {
+        --size: 120px;
+        right: 150px;
+    }
+    #hero .banner-image.image2 {
+        --size: 100px;
+    }
+    #hero .banner-image.image3 {
+        --size: 220px;
+        right: 50px;
+    }
+    #hero .banner-image.image4 {
+        --size: 170px;
+        left: 140px;
+        bottom: 220px;
+    }
+    #hero .banner-image.image5 {
+        --size: 150px;
+        left: 210px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #hero .banner-image.image1 {
+        right: 60px;
+    }
+    #hero .banner-image.image2 {
+        right: 110px;
+    }
+    #hero .banner-image.image3 {
+        --size: 180px;
+        right: 30px;
+        bottom: 60px;
+    }
+    #hero .banner-image.image4 {
+        --size: 150px;
+        left: 120px;
+        bottom: 170px;
+    }
+    #hero .banner-image.image5 {
+        --size: 100px;
+        left: 180px;
+        bottom: 110px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #hero .banner-image.image1 {
+        --size: 90px;
+        right: 30px;
+    }
+    #hero .banner-image.image2 {
+        --size: 80px;
+        right: 80px;
+    }
+    #hero .banner-image.image4 {
+        --size: 130px;
+        left: 110px;
+        bottom: 140px;
+    }
+    #hero .banner-image.image5 {
+        left: 150px;
+        bottom: 70px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #hero .banner-image.image1,
+    #hero .banner-image.image2 {
+        display: none;
+    }
+
+    #hero .banner-image.image4 {
+        --size: 140px;
+        left: 90px;
+        bottom: 120px;
+    }
+
+    #hero .banner-image.image5 {
+        --size: 80px;
+        left: 140px;
+        bottom: 80px;
+    }
+}
+
+/* animation */
+@keyframes bounce-X {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(var(--bounce-x));
+    }    
+}
+@keyframes bounce-Y {
+    0% {
+        transform: translateY(var(--bounce-y));
+    }
+    100% {
+        transform: translateY(0%);
+    }    
+}
+
+#hero .upsc-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    background-color: var(--bright-blue);
+    color: var(--text-secondary);
+    border-radius: 22px;
+    padding: 10px 20px;
+}
+
+#hero .upsc-btn img {
+    --size: 25px;
+    width: var(--size);
+    height: var(--size);
 }
