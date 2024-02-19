@@ -1,7 +1,7 @@
 
 @font-face {
-    font-family: "monteserrat";
-    src: url('../fonts/montserrat.woff2');
+    font-family: 'monteserrat';
+    src: url('../fonts/monteserat-sans.woff2');
 }
 
 @font-face {
@@ -24,8 +24,7 @@
     --text-priimary: hsl(0, 0%, 6%);
     --text-secondary: rgb(255, 255, 255);
 
-    /* --font-primary: 'monteserrat'; */
-    --font-primary: Arial, Helvetica, sans-serif;
+    --font-primary: monteserrat, sans-serif;
     --font-secondary: 'inter', sans-serif;
 }
 
@@ -149,10 +148,24 @@ header .container-fluid nav ul li a:hover::after {
     display: none;
 }
 
+@media screen and (max-width: 992px) {
+    header .container-fluid nav {
+        display: none;
+    }
+
+    #mobile-toggler {
+        cursor: pointer;
+        display: inline-block;
+        background-color: transparent;
+        border: none;
+        padding: 5px 8px;
+    }
+}
+
 /* hero */
 #hero {
     position: relative;
-    min-height: calc(100vh - var(--header-height));
+    height: calc(100vh - var(--header-height));
     padding-block: 150px;
     overflow: hidden;
 }
@@ -183,9 +196,11 @@ header .container-fluid nav ul li a:hover::after {
 }
 
 #hero .content {
+    position: relative;
     width: 70%;
     text-align: center;
     margin-inline: auto;
+    z-index: 1;
 }
 
 #hero .content h1 {
@@ -334,7 +349,7 @@ header .container-fluid nav ul li a:hover::after {
 
 @media screen and (max-width: 991px) {
     #hero {
-        min-height: 600px;
+        max-height: 600px;
         padding-block: 0px 70px;
     }
 
@@ -359,6 +374,11 @@ header .container-fluid nav ul li a:hover::after {
 @media screen and (max-width: 766px) {
     #hero {
         padding-block: 50px;
+    }
+    #hero::after {
+        --size: 400px;
+        left: 250;
+        bottom: -140px;
     }
     #hero .content {
         width: 90%;
