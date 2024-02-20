@@ -42,11 +42,13 @@ body {
     width: min(100%, var(--cn-width));
     padding-inline: 15px;
     margin-inline: auto;
+    overflow: hidden;
 }
 
 .container-fluid {
     width: 100%;
     padding-inline: 50px;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 1200px) {
@@ -88,9 +90,15 @@ ul.default {
 /* header */
 header {
     height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-bg);
+    z-index: 10;
 }
 
-header .container-fluid {
+header > .container-fluid {
     height: inherit;
     display: flex;
     justify-content: space-between;
@@ -102,30 +110,30 @@ header .container-fluid .logo img {
     height: auto;
 }
 
-header .container-fluid nav ul {
+header .container-fluid nav ul.nav-list {
     display: flex;
 }
 
-header .container-fluid nav ul li {
+header .container-fluid nav ul.nav-list > li {
     height: var(--header-height);
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
     text-wrap: nowrap;
     font-size: 14px;
-    letter-spacing: 1.4px;
     font-weight: 600;
-    text-transform: uppercase;
     padding-inline: 16px;
 }
 
-header .container-fluid nav ul li a {
+header .container-fluid nav ul.nav-list > li a.nav-link {
     position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
     padding-bottom: 5px;
     transition: all 300ms ease-in-out;
 }
 
-header .container-fluid nav ul li a::after {
+header .container-fluid nav ul.nav-list > li > a.nav-link::after {
     content: '';
     width: 0px;
     height: 2px;
@@ -137,11 +145,150 @@ header .container-fluid nav ul li a::after {
     transition: all 400ms ease-in-out;
 }
 
-header .container-fluid nav ul li a:hover {
+header .container-fluid nav ul.nav-list>li:hover a.nav-link {
     color: var(--accent-orange);
 }
-header .container-fluid nav ul li a:hover::after {
+header .container-fluid nav ul.nav-list>li:hover a.nav-link::after {
     width: 100%;
+}
+
+header .container-fluid nav ul li .sub-menu {
+    pointer-events: none;
+    width: 100vw;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    background-color: var(--primary-bg);
+    color: var(--text-priimary);
+    padding-block: 50px;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: all 300ms ease;
+    z-index: -1;
+}
+
+header .container-fluid nav ul.nav-list > li:hover .sub-menu {
+    pointer-events: all;
+    opacity: 1;
+    z-index: 10;
+}
+
+header .sub-menu .sub-menu-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+header .sub-menu .sub-menu-content-col {
+    width: 100%;
+}
+
+header .sub-menu .sub-menu-content .sub-menu-content-book {
+    display: flex;
+    align-items: center;
+    /* gap: 40px; */
+    border: 0.65px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 16px 24px;
+}
+
+header .sub-menu .sub-menu-content .sub-menu-content-book .sub-menu-book-image img {
+    width: auto;
+    height: 300px;
+}
+
+header .sub-menu .sub-menu-content .sub-menu-content-book .sub-menu-book-content {
+    margin-left: 40px;
+}
+
+header .sub-menu .sub-menu-content .sub-menu-content-book .sub-menu-book-content h4 {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 34px;
+    text-wrap: wrap;
+}
+
+header .sub-menu .sub-menu-content .sub-menu-content-book .sub-menu-book-content p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+header .sub-menu .sub-menu-content .sub-menu-content-book .sub-menu-book-content .price {
+    display: flex;
+    gap: 5px;
+    margin-top: 24px;
+}
+
+header .sub-menu .sub-menu-content .sub-menu-content-book .sub-menu-book-content .price .strike {
+    color: rgb(51, 51, 51);
+}
+
+header .sub-menu .sub-menu-content .sub-menu-content-book .sub-menu-book-content .btn {
+    display: inline-block;
+    width: 100%;
+    max-width: 170px;
+    background-color: var(--accent-orange);
+    color: var(--text-secondary);
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    border: 2px solid var(--accent-orange);
+    border-radius: 50px;
+    padding: 10px 24px;
+    margin-top: 30px;
+}
+
+header .sub-menu .sub-menu-content-image {
+    height: 340px;
+    padding: 16px 24px;
+}
+
+header .sub-menu .sub-menu-content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-fit: center center;
+    border-radius: 20px;
+}
+
+header .sub-menu .sub-menu-content .sub-menu-content-seperator {
+    background-color: rgb(229, 229, 229);
+    width: 2px;
+    margin-inline: 15px;
+}
+
+header .sub-menu .sub-menu-content .sub-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+header .sub-menu .sub-menu-content .sub-menu-list li a {
+    display: block;
+    text-decoration: none;
+    text-wrap: wrap;
+    color: var(--text-priimary);
+    border: 0.65px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 16px 32px;
+}
+
+header .sub-menu .sub-menu-content .sub-menu-list li a h5 {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+header .sub-menu .sub-menu-content .sub-menu-list li a:hover {
+    color: var(--accent-blue);
+}
+
+header .sub-menu .sub-menu-content .sub-menu-list li a p {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: none;
+    margin-top: 4px;
 }
 
 #mobile-toggler {
@@ -167,6 +314,7 @@ header .container-fluid nav ul li a:hover::after {
     position: relative;
     height: calc(100vh - var(--header-height));
     padding-block: 150px;
+    margin-top: var(--header-height);
     overflow: hidden;
 }
 
