@@ -735,3 +735,82 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
     width: var(--size);
     height: var(--size);
 }
+
+/* about-us */
+#about-us .content {
+    width: 80%;
+    padding-block: 150px;
+    margin-inline: auto;
+}
+
+#about-us .content p {
+    text-align: center;
+    font-size: 35px;
+    line-height: 46px;
+}
+
+#about-us .content .accent-blue {
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+#about-us .content .accent-orange {
+    color: var(--accent-orange);
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1500px){
+    #about-us .content {
+        width: 70%;
+        padding-block: 100px;
+    }
+
+    #about-us .content p {
+        font-size: 32px;
+        line-height: 42px;
+    }
+}
+
+@media screen and (max-width: 1400px){
+    #about-us .content {
+        padding-block: 80px;
+    }
+}
+
+@media screen and (max-width: 1400px){
+    #about-us .content p {
+        font-size: 26px;
+        line-height: 36px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    #about-us .content {
+        width: 65%;
+    }
+
+    #about-us .content p {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 991px){
+    #about-us .content {
+        width: 80%;
+        padding-block: 70px;
+    }
+    #about-us .content p {
+        font-size: 22px;
+        line-height: 28px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    #about-us .content {
+        width: 100%;
+        padding-block: 50px;
+    }
+
+    #about-us .content p {
+        font-size: 20px;
+    }
+}
