@@ -134,6 +134,16 @@ header .container-fluid nav ul.nav-list > li a.nav-link {
     transition: all 300ms ease-in-out;
 }
 
+header .container-fluid nav ul.nav-list > li a.nav-link svg {
+    fill: var(--text-priimary);
+    transition: all 300ms ease-in-out;
+}
+
+header .container-fluid nav ul.nav-list>li:hover a.nav-link svg {
+    fill: var(--accent-orange);
+    transform: rotate(180deg);
+}
+
 header .container-fluid nav ul.nav-list > li > a.nav-link::after {
     content: '';
     width: 0px;
