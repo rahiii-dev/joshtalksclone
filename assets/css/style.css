@@ -24,6 +24,7 @@
 
     --text-priimary: hsl(0, 0%, 6%);
     --text-secondary: rgb(255, 255, 255);
+    --text-accent-orange-light: rgb(250, 193, 114);
 
     --font-primary: monteserrat, sans-serif;
     --font-secondary: 'inter', sans-serif;
@@ -47,8 +48,9 @@ body {
 }
 
 .container-fluid {
+    --cn-px: 50px;
     width: 100%;
-    padding-inline: 50px;
+    padding-inline: var(--cn-px);
     overflow: hidden;
 }
 
@@ -68,7 +70,7 @@ body {
     }
 
     .container-fluid {
-        padding-inline: 20px;
+        --cn-px: 20px;
     }
 }
 
@@ -197,7 +199,6 @@ header .sub-menu .sub-menu-content-col {
 header .sub-menu .sub-menu-content .sub-menu-content-book {
     display: flex;
     align-items: center;
-    /* gap: 40px; */
     border: 0.65px solid rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     padding: 16px 24px;
@@ -1023,4 +1024,166 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
         padding-inline: 0px;
     }  
       
+}
+
+/* tab section */
+.tab {
+    position: relative;
+}
+
+.tab .tab-index .indexes {
+    display: flex;
+}
+
+.tab .tab-index .indexes .index {
+    min-width: calc(100vw - (var(--cn-px) * 2) - 15px);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: rgb(189, 195, 190);
+    border-bottom: 2px solid transparent;
+    padding: 10px 5px;
+}
+
+.tab .tab-index .indexes .index.active {
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
+}
+
+.tab .tab-index .slider-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.tab .tab-index .slider-buttons button {
+    background-color: transparent;
+    border: none;
+    padding: 8px 14px;
+    margin-bottom: 10px;
+}
+
+.tab-item .tab-image {
+    overflow: hidden;
+    padding-inline: 20px;
+}
+
+.tab-item .tab-image img {
+    width: 100%;
+    height: auto;
+}
+
+.tab-item .tab-content > h2 {
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-accent-orange-light);
+    padding-block: 30px;
+}
+
+.tab-item .tab-content .tab-content-box {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tab-item .tab-content .tab-content-box h4 {
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.tab-item .tab-content .tab-content-box p {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+@media screen and (min-width: 767px) {
+    .tab {
+        padding-top: 40px;
+        background-color: rgba(0,0,0,.4);
+    }
+
+    .tab .tab-index .indexes {
+        justify-content: center;
+    }
+
+    .tab .tab-index .indexes .index {
+        cursor: pointer;
+        min-width: unset;
+        width: 25%;
+        border-color: rgb(189, 195, 190);
+    }
+    .tab .tab-index .slider-buttons {
+        display: none;
+    }
+
+    .tab-item .tab-image {
+        position: absolute;
+        inset: 0;
+        padding: 0;
+        z-index: -1;
+    }
+
+    .tab-item .tab-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .tab-item .tab-content > h2 {
+        font-size: 32px;
+        line-height: 40px;
+        text-align: left;
+        padding-bottom: 150px;
+    }
+
+    .tab-item .tab-content .tab-content-box {
+        flex-direction: row;
+        gap: 60px;
+        color: var(--text-secondary);
+        text-align: left;
+    }
+
+    .tab-item .tab-content .tab-content-box h4 {
+        font-size: 22px;
+        line-height: 28px;
+    }
+
+    .tab-item .tab-content .tab-content-box p {
+        margin-top: 8px;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .tab-item .tab-content > h2 {
+        font-size: 36px;
+        line-height: 43px;
+        padding-top: 150px;
+    }
+
+    .tab-item .tab-content .tab-content-box p {
+        margin-top: 12px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .tab-item .tab-content .tab-content-box h4 {
+        font-size: 24px;
+        line-height: 31px;
+    }
+
+    .tab-item .tab-content .tab-content-box p {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .tab-item .tab-content > h2 {
+        padding-bottom: 190px;
+    }
 }
