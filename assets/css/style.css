@@ -25,9 +25,10 @@
     --text-priimary: hsl(0, 0%, 6%);
     --text-secondary: rgb(255, 255, 255);
     --text-accent-orange-light: rgb(250, 193, 114);
+    --text-accent-blue-light: hsl(204, 88%, 58%);
 
     --font-primary: monteserrat, sans-serif;
-    --font-secondary: 'inter', sans-serif;
+    --font-secondary: inter, sans-serif;
 }
 
 
@@ -1185,5 +1186,153 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
 @media screen and (min-width: 1300px) {
     .tab-item .tab-content > h2 {
         padding-bottom: 190px;
+    }
+}
+
+/* statistics */
+#statistics {
+    padding-block: 150px;
+}
+
+#statistics .content > h1 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 58px;
+    text-align: center;
+}
+
+#statistics .content .statistics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+#statistics .content .statistics .statistics-item {
+    min-height: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: var(--accent-blue);
+    color: var(--text-secondary);
+    border: 4px solid transparent;
+    border-radius: 8px;
+    padding: 25px 24px 45px;
+}
+
+#statistics .content .statistics .statistics-item h4 {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--font-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#statistics .content .statistics .statistics-item p {
+    text-align: center;
+    font-size: 86px;
+    font-weight: 600;
+    line-height: 88px;
+}
+#statistics .content .statistics .statistics-item p > span {
+    display: block;
+}
+
+#statistics .content .statistics .statistics-item p .percent {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.statistics-item.accent-blue {
+    background-color: var(--accent-blue);
+}
+.statistics-item.accent-blue p {
+    color: var(--text-accent-orange-light);
+}
+
+.statistics-item.accent-orange-light {
+    background-color: var(--text-accent-orange-light) !important;
+}
+.statistics-item.accent-orange-light p {
+    color: var(--accent-orange);
+}
+
+.statistics-item.accent-blue-outeline {
+    background-color: var(--primary-bg) !important;
+    border-color: var(--accent-blue) !important;
+    color: var(--text-accent-blue-light) !important;
+}
+.statistics-item.accent-blue-outeline p {
+    color: var(--text-accent-blue-light);
+
+}
+.statistics-item.accent-orange {
+    background-color: var(--accent-orange) !important;
+}
+.statistics-item.accent-orange p {
+    color: var(--text-accent-orange-light);
+}
+
+@media screen and (max-width: 1500px){
+    #statistics {
+        padding-block: 100px;
+    }
+    #statistics .content > h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    #statistics .content .statistics .statistics-item p {
+        font-size: 58px;
+        line-height: 66px;
+    }
+}
+@media screen and (max-width: 1400px){
+    #statistics {
+        padding-block: 80px;
+    }
+}
+@media screen and (max-width: 1300px){
+    #statistics .content > h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+}
+@media screen and (max-width: 1200px){
+    #statistics .content > h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+}
+@media screen and (max-width: 991px){
+    #statistics {
+        padding-block: 70px;
+    }
+    #statistics .content > h1 {
+        font-size: 32px;
+        line-height: 42px;
+    }
+    #statistics .content .statistics {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    #statistics .content .statistics .statistics-item {
+        min-height: 230px;
+    }
+}
+@media screen and (max-width: 767px){
+    #statistics {
+        padding-block: 50px;
+    }
+    #statistics .content > h1 {
+        font-size: 26px;
+        line-height: 36px;
+    }
+}
+@media screen and (max-width: 481px){
+    #statistics .content .statistics {
+        grid-template-columns: 1fr;
     }
 }
