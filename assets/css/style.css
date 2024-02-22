@@ -91,6 +91,46 @@ ul.default {
 }
 
 
+.slider-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.slider-buttons button {
+    background-color: transparent;
+    border: none;
+    padding: 8px 14px;
+}
+.slider-buttons button svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--text-priimary);
+}
+
+.padding-y {
+    padding-block: 150px;
+}
+@media screen and (max-width: 1500px){
+    .padding-y {
+        padding-block: 100px;
+    }
+}
+@media screen and (max-width: 1400px){
+    .padding-y {
+        padding-block: 80px;
+    }
+}
+@media screen and (max-width: 991px){
+    .padding-y {
+        padding-block: 70px;
+    }
+}
+@media screen and (max-width: 767px){
+    .padding-y {
+        padding-block: 50px;
+    }
+}
+
 /* header */
 header {
     height: var(--header-height);
@@ -756,7 +796,6 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
 
 #about-us .content {
     width: 80%;
-    padding-block: 150px;
     margin-inline: auto;
 }
 
@@ -778,18 +817,11 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
 @media screen and (max-width: 1500px){
     #about-us .content {
         width: 70%;
-        padding-block: 100px;
     }
 
     #about-us .content p {
         font-size: 32px;
         line-height: 42px;
-    }
-}
-
-@media screen and (max-width: 1400px){
-    #about-us .content {
-        padding-block: 80px;
     }
 }
 
@@ -813,7 +845,6 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
 @media screen and (max-width: 991px){
     #about-us .content {
         width: 80%;
-        padding-block: 70px;
     }
     #about-us .content p {
         font-size: 22px;
@@ -824,7 +855,6 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
 @media screen and (max-width: 767px){
     #about-us .content {
         width: 100%;
-        padding-block: 50px;
     }
 
     #about-us .content p {
@@ -1054,14 +1084,6 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
 }
 
 .tab .tab-index .slider-buttons {
-    display: flex;
-    justify-content: center;
-}
-
-.tab .tab-index .slider-buttons button {
-    background-color: transparent;
-    border: none;
-    padding: 8px 14px;
     margin-bottom: 10px;
 }
 
@@ -1190,10 +1212,6 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
 }
 
 /* statistics */
-#statistics {
-    padding-block: 150px;
-}
-
 #statistics .content > h1 {
     font-size: 48px;
     font-weight: 600;
@@ -1276,9 +1294,6 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
 }
 
 @media screen and (max-width: 1500px){
-    #statistics {
-        padding-block: 100px;
-    }
     #statistics .content > h1 {
         font-size: 40px;
         line-height: 50px;
@@ -1286,11 +1301,6 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
     #statistics .content .statistics .statistics-item p {
         font-size: 58px;
         line-height: 66px;
-    }
-}
-@media screen and (max-width: 1400px){
-    #statistics {
-        padding-block: 80px;
     }
 }
 @media screen and (max-width: 1300px){
@@ -1306,9 +1316,6 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
     }
 }
 @media screen and (max-width: 991px){
-    #statistics {
-        padding-block: 70px;
-    }
     #statistics .content > h1 {
         font-size: 32px;
         line-height: 42px;
@@ -1323,9 +1330,6 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
     }
 }
 @media screen and (max-width: 767px){
-    #statistics {
-        padding-block: 50px;
-    }
     #statistics .content > h1 {
         font-size: 26px;
         line-height: 36px;
@@ -1334,5 +1338,137 @@ header .sub-menu .sub-menu-content .sub-menu-list li a p {
 @media screen and (max-width: 481px){
     #statistics .content .statistics {
         grid-template-columns: 1fr;
+    }
+}
+
+/* trus-us section */
+#trus-us {
+    padding-top: 0px;
+}
+
+#trust-us .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#trust-us .title .line {
+    width: 100%;
+    height: 10px;
+    background-color: var(--text-accent-orange-light);
+}
+
+#trust-us .title .text {
+    width: 40%;
+    text-transform: uppercase;
+    text-wrap: nowrap;
+    text-align: center;
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 3.5px;
+    margin-inline: 32px;
+}
+
+#trust-us .companies {
+    min-height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10vw;
+    margin-top: 80px;
+}
+
+#trust-us .companies img {
+    width: 100%;
+    max-width: 180px;
+    height: 100%;
+    object-fit: contain;
+}
+
+#trust-us .persons-wrapper {
+    margin-top: 50px;
+}
+
+#trust-us .persons-wrapper .persons {
+    display: flex;
+    overflow-x: hidden;
+}
+
+#trust-us .persons-wrapper .persons .person {
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: var(--font-secondary);
+    padding: 16px 30px;
+    margin-inline: 10px;
+}
+
+#trust-us .persons-wrapper .persons .person .profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#trust-us .persons-wrapper .persons .person .profile-img img {
+    --h-align: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center var(--h-align);
+}
+
+#trust-us .persons-wrapper .persons .person .details h4 {
+    text-transform: uppercase;
+    text-wrap: wrap;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+#trust-us .persons-wrapper .persons .person .details p {
+    font-size: 14px;
+    margin-block: 5px 16px;
+}
+
+@media screen and (max-width: 1500px){
+    #trust-us .title .text {
+        width: 45%;
+        font-size: 18px;
+        margin-inline: 28px;
+    }
+
+    #trust-us .persons-wrapper .persons .person {
+        min-width: 330px;
+    }
+}
+@media screen and (max-width: 1200px){
+    #trust-us .title .text {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 991px){
+    #trust-us .title .text {
+        width: 75%;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 767px){
+    #trust-us .title .text {
+        width: 100%;
+        font-size: 12px;
+        margin-inline: 15px;
+    }
+    #trust-us .persons-wrapper .persons .person {
+        min-width: 80%;
+        margin-inline: auto;
+    }
+}
+@media screen and (max-width: 480px){
+    #trust-us .persons-wrapper .persons .person {
+        min-width: 90%;
     }
 }
